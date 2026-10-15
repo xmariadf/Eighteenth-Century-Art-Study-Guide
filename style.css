@@ -174,7 +174,7 @@ section h1 {
     box-sizing: border-box;
 }
 
-/* CLOSED CARD TYPOGRAPHY AND LAYOUTa (SHARED) */
+/* CLOSED CARD STATE TYPOGRAPHY AND LAYOUT (SHARED) */
 .artwork-card summary,
 .term-card summary {
     display: flex;
@@ -197,4 +197,10 @@ section h1 {
     font-style: italic;
 }
 
+
+/*OPENED CARD STATE*/
+.artwork-card[open],
+.term-card[open] {
+    
+}
 

@@ -1,41 +1,200 @@
 /*USE THE DEV TOOL IN FIGMA TO PASTE INTO HERE*/
 
-/*==========CSS MASTER VARIABLES==========*/
+/*========== CSS VARIABLES PANEL ==========*/
 :root {
-  /* Colors */
-  --color-accent: #a3bbd0;
-  --color-light: #fde6db;
-  --color-medium-light: #ad908c;
-  --color-medium: #806663;
-  --color-dark: #47372f;
-  --color-darker: #2a1f1a;
-  --color-darkest: #1d1916;
+    /* Colors */
+    --color-accent: #a3bbd0;
+    --color-light: #fde6db;
+    --color-medium-light: #ad908c;
+    --color-medium: #806663;
+    --color-dark: #47372f;
+    --color-darker: #2a1f1a;
+    --color-darkest: #1d1916;
 
-  /* Font Families */
-  --font-family-heading: "Abhaya Libre ExtraBold", serif;
-  --font-family-site-title: "Dela Gothic One", sans-serif;
-  --font-family-body: "Balsamiq Sans", sans-serif;
+    /* Font Families */
+    --font-family-heading: "Abhaya Libre ExtraBold", serif;
+    --font-family-site-title: "Dela Gothic One", sans-serif;
+    --font-family-body: "Balsamiq Sans", sans-serif;
 
-  /* Shared Typography Values */
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
-  --letter-spacing-wide: 0.06em;
-  --letter-spacing-standard: 0.04em;
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
 
-  /* 💡 Cleaned-Up Typography (Safer and Easier to Maintain) */
-  --site-title-size: 24px;
-  --navigation-size: 28px;
-  --section-heading-size: 36px;
-  --card-title-size: 24px;
-  --card-caption-size: 20px;
-  --card-description-size: 18px;
-  --image-caption-size: 16px;
-  
-  --line-height-heading: 35px;
-  --line-height-normal: normal;
+    /* Letter Spacing */
+    --letter-spacing-wide: 0.06em;
+    --letter-spacing-standard: 0.04em;
+    --letter-spacing-navigation: 1.68px;
+    --letter-spacing-section-heading: 2.16px;
+    --letter-spacing-title: 1.44px;
+
+    /* Typography Sizes */
+    --site-title-size: 24px;
+    --navigation-size: 28px;
+    --section-heading-size: 36px;
+    --card-title-size: 24px;
+    --card-caption-size: 20px;
+    --card-description-size: 18px;
+    --image-caption-size: 16px;
+
+    /* Line Heights*/
+    --line-height-heading: 35px;
+    --line-height-normal: normal;
 }
 
 /*==========GLOBAL LAYOUT STYLES AND MAIN BACKGROUND==========*/
 body {
-    
+    background-color: var(--color-darkest);
+    color: var(--color-medium-light);
+    font-family: var(--font-family-body);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
+
+/*Figma Auto Layout for the Main site frame */
+.site-wrapper {
+    display: flex;
+    width: 1512px;
+    max-width: 100%; /* Keeps it responsive on smaller screens */
+    padding-bottom: 66px;
+    flex-direction: column;
+    align-items: center;
+    gap: 41px; /* Creates the exact gap between header and sections */
+    box-sizing: border-box;
+}
+
+/*==========HEADER STYLES==========*/
+
+/*OUTER BOX*/
+.site-header {
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 170px; 
+    padding-left: 50px; 
+    width: 100%; /* Spans the full 1512px wrapper width */
+    box-sizing: border-box;
+}
+
+/*SITE TITLE WRAPPER*/
+.site-title {
+    color: var(--color-medium);
+
+    font-family: var(--font-family-site-title);
+    font-size: var(--site-title-size);
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-title);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 27px;
+    height: 93px;
+    box-sizing: border-box;
+}
+
+/*NAVIGATION WRAPPER*/
+.site-header nav a {
+    color: var(--color-medium);
+
+    font-family: var(--font-family-heading);
+    font-size: var(--navigation-size);
+    font-style: normal;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-navigation); /* Precision spacing between navigation letters */
+
+    text-decoration: none; /* Removes underlines */
+}
+
+/*==========MAIN CONTENT WRAPPER==========*/
+main {
+    width: 100%;
+    max-width: 1360px; /* Forces main content to match card width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/*==========SECTION==========*/
+
+/* SECTION FLEX WRAPPER */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;    /*This allows cards to fill the full 1360px width */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*SECTION HEADING*/
+section h1 {
+    /* 1. Typography from figma */
+    color: var(--color-medium);
+    font-family: var(--font-family-heading);
+    font-size: var(--section-heading-size);
+    font-style: normal;
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-section-heading);
+}
+
+/*==========CARDS==========*/
+
+/* HIDE DEFAULT SUMMARY ARROWS */
+.artwork-card summary::-webkit-details-marker,
+.term-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.artwork-card summary,
+.term-card summary {
+    list-style: none; /* For Firefox */
+}
+
+/*CLOSED CARD BOX*/
+.artwork-card,
+.term-card {
+    background-color: var(--color-darker);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left-aligns text inside the cards */
+    gap: 10px;
+    width: 100%;             
+    max-width: 1360px;       /* Matches Figma card width */
+    padding: 0 37px;
+    box-sizing: border-box;
+}
+
+/* CLOSED CARD TYPOGRAPHY AND LAYOUTa (SHARED) */
+.artwork-card summary,
+.term-card summary {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 11px 0; /* Top and Bottom Padding */
+    
+    color: var(--color-dark);
+    font-family: var(--font-family-body);
+    font-size: var(--card-title-size);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-title);
+    cursor: pointer;
+    font-style: normal; /* Default*/
+}
+
+/* Artwork Title is Italic */
+.artwork-card summary {
+    font-style: italic;
+}
+
+

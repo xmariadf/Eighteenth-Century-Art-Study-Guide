@@ -199,8 +199,18 @@ section h1 {
 
 
 /*OPENED CARD STATE*/
+
+/*Global*/
 .artwork-card[open],
 .term-card[open] {
     
 }
+
+/*Regular Artwork Card*/
+
+/*Multi-Image Artwork Card*/
+
+/*Term Card Without Image*/
+
+/* Term Card With Image*/
 

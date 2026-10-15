@@ -1,0 +1,41 @@
+/*USE THE DEV TOOL IN FIGMA TO PASTE INTO HERE*/
+
+/*==========CSS MASTER VARIABLES==========*/
+:root {
+  /* Colors */
+  --color-accent: #a3bbd0;
+  --color-light: #fde6db;
+  --color-medium-light: #ad908c;
+  --color-medium: #806663;
+  --color-dark: #47372f;
+  --color-darker: #2a1f1a;
+  --color-darkest: #1d1916;
+
+  /* Font Families */
+  --font-family-heading: "Abhaya Libre ExtraBold", serif;
+  --font-family-site-title: "Dela Gothic One", sans-serif;
+  --font-family-body: "Balsamiq Sans", sans-serif;
+
+  /* Shared Typography Values */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --letter-spacing-wide: 0.06em;
+  --letter-spacing-standard: 0.04em;
+
+  /* 💡 Cleaned-Up Typography (Safer and Easier to Maintain) */
+  --site-title-size: 24px;
+  --navigation-size: 28px;
+  --section-heading-size: 36px;
+  --card-title-size: 24px;
+  --card-caption-size: 20px;
+  --card-description-size: 18px;
+  --image-caption-size: 16px;
+  
+  --line-height-heading: 35px;
+  --line-height-normal: normal;
+}
+
+/*==========GLOBAL LAYOUT STYLES AND MAIN BACKGROUND==========*/
+body {
+    
+}

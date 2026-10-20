@@ -1,48 +1,77 @@
 /*USE THE DEV TOOL IN FIGMA TO PASTE INTO HERE*/
 
-/*========== CSS VARIABLES PANEL ==========*/
+/*==================================================================
+  SETUP AND VARIABLES
+  ==================================================================*/
+
+/*========HTML AND SCROLL SETTINGS========*/
+html {
+    scroll-behavior: smooth;      /* Makes the scroll nice and fluid */
+    scrollbar-gutter: stable;       /* Prevents the scrollbar from jumping in and out */
+    scroll-padding-top: 130px;    /* Keeps anchor links safely below your fixed header */
+}
+
+/* Gives cards breathing room at the top AND leaves leeway at the bottom */
+.artwork-card, .term-card {
+    scroll-margin-top: 140px;     
+    scroll-margin-bottom: 80px;   /* Leaves space at the bottom so the next card peeks in */
+}
+
+/*========CSS VARIABLES (DESIGN TOKENS)======== */
 :root {
-    /* Colors */
+    /*COLORS*/
     --color-accent: #a3bbd0;
     --color-light: #fde6db;
-    --color-medium-light: #ad908c;
+    --color-medium-light: #a18582; /*original: #ad908c*/
     --color-medium: #806663;
     --color-dark: #47372f;
     --color-darker: #2a1f1a;
     --color-darkest: #1d1916;
+    --color-card-link: #9e7671;
 
-    /* Font Families */
+    /*FONT FAMILIES*/
     --font-family-heading: "Abhaya Libre ExtraBold", serif;
     --font-family-site-title: "Dela Gothic One", sans-serif;
     --font-family-body: "Balsamiq Sans", sans-serif;
 
-    /* Font Weights */
+    /*FONT WEIGHTS*/
     --font-weight-regular: 400;
+    --font-weight-semibold: 560;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
 
-    /* Letter Spacing */
+    /*LETTER SPACING*/
     --letter-spacing-wide: 0.06em;
     --letter-spacing-standard: 0.04em;
     --letter-spacing-navigation: 1.68px;
     --letter-spacing-section-heading: 2.16px;
     --letter-spacing-title: 1.44px;
+    --letter-spacing-caption-label: 1.2px;
+    --letter-spacing-caption-value: 0.8px;
+    --letter-spacing-description: 0.72px;
+    --letter-spacing-source: 0.96px;
 
-    /* Typography Sizes */
+    /*TYPOGRAPHY SIZES*/
     --site-title-size: 24px;
-    --navigation-size: 28px;
+    --navigation-size: 24.5px;
     --section-heading-size: 36px;
     --card-title-size: 24px;
     --card-caption-size: 20px;
     --card-description-size: 18px;
     --image-caption-size: 16px;
+    --source-link-size: 16px;
 
-    /* Line Heights*/
+    /*LINE HEIGHTS*/
     --line-height-heading: 35px;
     --line-height-normal: normal;
 }
 
-/*==========GLOBAL LAYOUT STYLES AND MAIN BACKGROUND==========*/
+
+/*==================================================================
+  GLOBAL OUTER CONTAINERS
+  ==================================================================*/
+
+/*========PAGE BASE========*/
 body {
     background-color: var(--color-darkest);
     color: var(--color-medium-light);
@@ -54,43 +83,53 @@ body {
     min-height: 100vh;
 }
 
-/*Figma Auto Layout for the Main site frame */
-.site-wrapper {
+/*========MASTER WEBSITE WRAPPER========*/
+.content-wrapper {
     display: flex;
     width: 1512px;
     max-width: 100%; /* Keeps it responsive on smaller screens */
+    padding-top: 120px; /* Pushes the main content down below the fixed header */
     padding-bottom: 66px;
     flex-direction: column;
     align-items: center;
-    gap: 41px; /* Creates the exact gap between header and sections */
     box-sizing: border-box;
 }
 
-/*==========HEADER STYLES==========*/
 
-/*OUTER BOX*/
+/*==================================================================
+  SITE HEADER
+  ==================================================================*/
+
+/*========HEADER WRAPPER (MAIN BOX)========*/
 .site-header {
-    background-color: var(--color-dark);
+    background-color: var(--color-dark); 
     display: flex;
     flex-direction: row; 
     align-items: center; 
     gap: 170px; 
     padding-left: 50px; 
-    width: 100%; /* Spans the full 1512px wrapper width */
+    width: 100%; /* Spans the full wrapper width */
     box-sizing: border-box;
+    border-radius: 0 0 6px 6px; /* Softens only the bottom corners */
+    border-bottom: 4px solid var(--color-darker);
+    
+    /* Makes the header stay fixed at the top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keeps it layered safely above all scrolling content */
 }
 
-/*SITE TITLE WRAPPER*/
+/*========SITE TITLE WRAPPER========*/
 .site-title {
     color: var(--color-medium);
-
+    opacity: 72%;
     font-family: var(--font-family-site-title);
     font-size: var(--site-title-size);
     font-style: normal;
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-heading);
     letter-spacing: var(--letter-spacing-title);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,21 +139,31 @@ body {
     box-sizing: border-box;
 }
 
-/*NAVIGATION WRAPPER*/
+/*========NAVIGATION WRAPPER========*/
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adjust this value to add more or less space between your links */
+}
+
 .site-header nav a {
     color: var(--color-medium);
-
+    opacity: 72%;
     font-family: var(--font-family-heading);
     font-size: var(--navigation-size);
     font-style: normal;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
     letter-spacing: var(--letter-spacing-navigation); /* Precision spacing between navigation letters */
-
     text-decoration: none; /* Removes underlines */
 }
 
-/*==========MAIN CONTENT WRAPPER==========*/
+
+/*==================================================================
+  MAIN SECTION LAYOUT
+  ==================================================================*/
+
+/*========MAIN CONTENT WRAPPER========*/
 main {
     width: 100%;
     max-width: 1360px; /* Forces main content to match card width */
@@ -124,9 +173,8 @@ main {
     align-items: stretch;
 }
 
-/*==========SECTION==========*/
-
-/* SECTION FLEX WRAPPER */
+/*========SECTION WRAPPER========*/
+/*The Header and Cards are stacked/contained here*/
 section {
     display: flex;
     flex-direction: column;
@@ -135,32 +183,51 @@ section {
     box-sizing: border-box;
 }
 
-/*SECTION HEADING*/
-section h1 {
-    /* 1. Typography from figma */
-    color: var(--color-medium);
-    font-family: var(--font-family-heading);
-    font-size: var(--section-heading-size);
-    font-style: normal;
-    font-weight: var(--font-weight-extrabold);
-    line-height: var(--line-height-heading);
-    letter-spacing: var(--letter-spacing-section-heading);
+/* Adds breathing room above any section that follows another section */
+section + section {
+    margin-top: 34px; /* Adjust this pixel value to get the exact gap you want */
 }
 
-/*==========CARDS==========*/
+/*==================================================================
+  COSMETICS AND DIVIDERS
+  ==================================================================*/
 
-/* HIDE DEFAULT SUMMARY ARROWS */
-.artwork-card summary::-webkit-details-marker,
-.term-card summary::-webkit-details-marker {
-    display: none;
+/*========ARTWORK AND TERM DIVIDER LINE========*/
+.artwork-card + .term-card {
+    position: relative; /* Required to anchor the absolute divider line */
 }
 
-.artwork-card summary,
-.term-card summary {
-    list-style: none; /* For Firefox */
+/*Trying to recreate figma stroke center alighnment*/
+.artwork-card + .term-card::before {
+    content: '';
+    position: absolute;
+    top: -2.5px; /* Centers the 5px line right on the seam (2.5px up, 2.5px down) */
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--color-darkest);
+    z-index: 2; /* Ensures it sits crisply on top of the backgrounds */
 }
 
-/*CLOSED CARD BOX*/
+.artwork-card + .term-card {
+  padding-top: 0; /*Add breathing room above the first term card text*/
+}
+
+/*========ROUND OUTER CORNERS OF CARD LIST========*/
+.list-of-cards > :first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.list-of-cards > :last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+
+/*==================================================================
+  CARDS: CORE STRUCTURAL WRAPPERS
+  ==================================================================*/
+
+/*========CLOSED CARD WRAPPER (MAIN BOX)========*/
 .artwork-card,
 .term-card {
     background-color: var(--color-darker);
@@ -174,43 +241,384 @@ section h1 {
     box-sizing: border-box;
 }
 
-/* CLOSED CARD STATE TYPOGRAPHY AND LAYOUT (SHARED) */
+/*========SUMMARY WRAPPER========*/
 .artwork-card summary,
 .term-card summary {
     display: flex;
     align-items: center;
     width: 100%;
     padding: 11px 0; /* Top and Bottom Padding */
-    
+    cursor: pointer;
+}
+
+/*========OPENED STATE WRAPPER (MAIN BOX)========*/
+.artwork-card[open],
+.term-card[open] {
+    background-color: var(--color-dark);
+    padding: 0 49px 34px 37px;
+    gap: 12px;
+}
+
+/*========TEXT WRAPPER========*/
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px; /* <--- Set your Figma paragraph gap HERE */
+}
+
+/*========CAPTION ROW WRAPPER========*/
+.caption-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+/* Artwork cards source link buffer (opened state) */
+.artwork-card[open] .text-wrapper a {
+    margin-top: 4px; 
+}
+
+/* Term cards source link buffer (opened state) */
+.term-card[open] .text-wrapper a {
+    margin-top: 0; 
+}
+
+
+/*==================================================================
+  CARDS: OPENED STATE VARIANCES
+  ==================================================================*/
+
+/*========ARTWORK-CARD-STANDARD-SINGLE-IMAGE CONTENTS WRAPPER========*/
+.artwork-card[open] .card-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 12px;
+    gap: 62px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*========IMAGE WRAPPER========*/
+.artwork-card[open] .image-wrapper {
+    width: 466px;
+    flex-shrink: 0;
+}
+
+.artwork-card[open] .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artwork-card[open] .text-wrapper {
+    flex: 1 1 0;
+    padding-top: 11px;
+}
+
+/*========ARTWORK-CARD-VERTICAL-IMAGE WRAPPER========*/
+.artwork-card[open].vertical-image {
+    width: 100%;
+}
+
+.artwork-card[open].vertical-image .image-wrapper {
+    width: fit-content;
+    max-width: 466px;
+    flex-shrink: 0;
+}
+
+.artwork-card[open].vertical-image .image-wrapper img {
+    max-height: 455px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artwork-card[open].vertical-image .text-wrapper {
+    flex: 1 1 0;
+    width: 100%;
+}
+
+/*========ARTWORK-CARD-MULTI-IMAGE WRAPPER========*/
+.artwork-card[open].multi-image[open] {
+    gap: 15px;
+}
+
+.artwork-card[open].multi-image[open] .image-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 601px;
+    height: auto;
+}
+
+.artwork-card[open].multi-image[open] .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.artwork-card[open].multi-image[open] .text-wrapper {
+    flex: 1 1 0; /* Lets CSS automatically fill the remaining space without overflowing */
+    max-width: 700px; /* Keeps your max width cap without forcing overflow */
+    padding: 25px 0 0 12px;
+    box-sizing: border-box;
+}
+
+/*========TERM-CARD-WITH-IMAGE CONTENTS WRAPPER========*/
+.term-card.with-image[open] .card-contents {
+    display: flex;
+    flex-direction: row;
+    padding-left: 12px;
+    align-items: flex-start;    
+    gap: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.term-card.with-image[open] .text-wrapper {
+    flex: 1 1 0;
+    max-width: 904px;
+}
+
+.term-card.with-image[open] .image-wrapper {
+    width: 296px;       
+    flex-shrink: 0;     
+    margin-top: -21px; /* Optical nudge for top alignment */
+}
+
+.term-card.with-image[open] .image-wrapper img {
+    width: 100%;        
+    height: auto;       
+    display: block;
+}
+
+/*========TERM CARD WITHOUT IMAGE CONTENTS WRAPPER========*/
+.term-card:not(.with-image)[open] .card-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 803px;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.term-card:not(.with-image)[open] .card-contents .text-wrapper {
+    width: 100%;
+}
+
+
+/*==================================================================
+  TYPOGRAPHY & TEXT STYLES
+  ==================================================================*/
+
+/*========SECTION HEADINGS========*/
+section h1 {
+    color: var(--color-medium);
+    opacity: 72%;
+    font-family: var(--font-family-heading);
+    font-size: var(--section-heading-size);
+    font-style: normal;
+    font-weight: var(--font-weight-extrabold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-section-heading);
+}
+
+/*========CARD TITLES & SUMMARIES TYPOGRAPHY========*/
+/* HIDE DEFAULT SUMMARY ARROWS */
+.artwork-card summary::-webkit-details-marker,
+.term-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.artwork-card summary,
+.term-card summary {
+    list-style: none; /* For Firefox */
     color: var(--color-dark);
     font-family: var(--font-family-body);
     font-size: var(--card-title-size);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
     letter-spacing: var(--letter-spacing-title);
-    cursor: pointer;
-    font-style: normal; /* Default*/
+    font-style: normal; /* Default */
 }
 
-/* Artwork Title is Italic */
+/* OPENED CARD SUMMARY COLOR */
+.artwork-card[open] summary,
+.term-card[open] summary {
+    color: var(--color-medium); /*considered medium-light*/
+}
+
+/* ARTWORK TITLE IS ITALIC */
 .artwork-card summary {
     font-style: italic;
 }
 
-
-/*OPENED CARD STATE*/
-
-/*Global*/
-.artwork-card[open],
-.term-card[open] {
-    
+/*========PARENT TERM STYLING (INDENTED TEXT + ACCENT BORDER)========*/
+.term-card.parent-term {
+    border-left: 4px solid var(--color-dark); /* Adds a subtle structural accent line on the left */
+}
+/*========SUB-TERM CARD STYLING (INDENTED TEXT + ACCENT BORDER)========*/
+.term-card.sub-term {
+    border-left: 4px dotted var(--color-dark); 
+    border-bottom: 0 dashed var(--color-dark);
 }
 
-/*Regular Artwork Card*/
+.term-card.sub-term summary,
+.term-card.sub-term .card-contents {
+    padding-left: 0; /* Indents the inner text and summary neatly */
+}
 
-/*Multi-Image Artwork Card*/
+/*========CARD DESCRIPTIONS (<p>)========*/
+.artwork-card .text-wrapper p,
+.term-card .card-contents p {
+    color: var(--color-medium);
+    font-family: var(--font-family-body);
+    font-size: var(--card-description-size);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-description);
+    margin: 0;
+}
 
-/*Term Card Without Image*/
+.text-wrapper p {
+    line-height: normal; /* Ensures line-height: normal across all card paragraphs */
+}
 
-/* Term Card With Image*/
+/*========SOURCE LINKS========*/
+.text-wrapper a {
+    font-family: var(--font-family-body);
+    font-size: var(--source-link-size);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-source);
+    color: var(--color-darker);
+    text-decoration: none;
+}
 
+.text-wrapper a:hover {
+    color: #806663;
+}
+
+/*========LINK BETWEEN CARDS========*/
+.text-wrapper a.card-link {
+    font-family: var(--font-family-body);
+    font-size: var(--card-description-size);         /* Matches paragraph size (18px)[cite: 2] */
+    font-weight: var(--font-weight-regular);       /* Matches paragraph weight (regular instead of semibold)[cite: 2] */
+    letter-spacing: var(--letter-spacing-description); /* Matches paragraph letter-spacing (0.72px)[cite: 2] */
+    color: var(--color-card-link);                    /* Matches regular paragraph text color[cite: 2] */
+    text-decoration: none;
+}
+
+.text-wrapper a.card-link:hover {
+    color: var(--color-darker);                    /* Turns dark when hovered[cite: 2] */
+}
+
+/*========ARTWORK CAPTIONS LABELS AND VALUES========*/
+/* CAPTION LABELS (DT) */
+.artwork-caption dt,
+.term-card dt {
+    color: var(--color-darker);
+    font-family: var(--font-family-body);
+    font-size: var(--card-caption-size);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-caption-label);
+}
+
+/* CAPTION VALUES (DD) */
+.artwork-caption dd,
+.term-card dd {
+    color: var(--color-medium);
+    font-family: var(--font-family-body);
+    font-size: var(--card-caption-size);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-caption-value);
+    margin: 0;
+}
+
+/*========SUB-SUB-TERM SPAN STYLES========*/
+.term-card .text-wrapper span.sub-sub-term {
+    color: var(--color-medium); /*considered medium-light alongside if titles were medium light*/
+    font-family: var(--font-family-body);
+    font-size: var(--card-caption-size);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-description);
+}
+
+/* Controls the spacing between each sub-sub-term block */
+.term-card .text-wrapper p:has(.sub-sub-term) {
+    margin: 0 0 16px 0;
+}
+
+/*========HIGHLIGHTED TERM STYLES========*/
+.text-wrapper span.highlight-term {
+    color: var(--color-medium-light);
+}
+
+/* Custom spacing for the normal paragraph before a sub-term */
+.text-wrapper p.adjust-bottom-margin {
+    margin-bottom: 20px; /* Adjust this pixel value to match the exact gap size you want */
+}
+
+
+/*==================================================================
+  EXTRAS AND MODALS
+  ==================================================================*/
+
+/*========LIGHTBOX MODAL WRAPPER (MAIN BOX)========*/
+.lightbox-modal {
+    background-color: var(--color-darkest);
+    border: 2px solid var(--color-darker);
+    border-radius: 8px;
+    padding: 20px;
+    width: fit-content;
+    max-width: 95vw;
+    max-height: 95vh;
+    margin: auto;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.85);
+    box-sizing: border-box;
+    position: fixed;
+    overflow: visible; /* Crucial: lets the X sit entirely outside the box */
+}
+
+/* Dark frosted backdrop behind the modal */
+.lightbox-modal::backdrop {
+    background: rgba(29, 25, 22, 0.9);
+    backdrop-filter: blur(6px);
+}
+
+/* Shows image at its actual native size, capped only if it exceeds the screen */
+.lightbox-modal img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 86vh; 
+    object-fit: contain;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+/* "X" button pushed completely clear of the top-right corner */
+.lightbox-close {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-medium);
+    font-family: var(--font-family-body);
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+    top: -28px;   /* Pushed further up, completely off the border */
+    right: -28px; /* Pushed further right, completely off the border */
+    padding: 0;
+    line-height: 1;
+    z-index: 10;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--color-medium-light);
+}

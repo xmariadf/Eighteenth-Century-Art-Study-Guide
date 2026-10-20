@@ -17,7 +17,7 @@
     <!--========VISIBLE ON WEBSITE=======-->
     <body>
         
-        <div class="site-wrapper">
+        <div class="content-wrapper">
             
             <!--========HEADER========-->
             <header class="site-header">
@@ -29,49 +29,545 @@
 
                 <!--========NAVIGATION========-->
                 <nav>
-                    <a href="#week-1"> Week 1</a>
+                    <a href="#09-14"> 09-14</a>
+                    <a href="#09-16"> 09-16</a>
                 </nav>
             </header> 
 
             <!--========MAIN CONTENT OF THE PAGE========-->
             <main>
-                <!--========SECTION OF CONTENT========-->
-                <section id="week-1">
-                    <h1> Week 1: Artworks and Terms</h1>
+                <!--========SECTION OF CONTENT 1========-->
+                <section id="09-14">
+                    <h1> September 14th: Art Academies and Hierarchy of Genres</h1>
 
                     <!--======== ACCORDIAN LIST OF CARDS========-->
                     <div class="list-of-cards">
 
                         <!--========ARTWORK CARD 1========-->
-                        <details class="artwork-card">
+                        <details class="artwork-card" name="card-group" id="the-academicians">
                             <summary>The Academicians of the Royal Academy</summary>
+                            <div class="card-contents">
+                                <div class="image-wrapper">
+                                    <img src="images/TheAcademiciansOfTheRoyalAcademy%20Medium.jpeg" alt="The Academicians of the Royal Academy Painting by Johann Zoffany">
+                                </div>
 
-                            <div class="image-wrapper">
-                                <img src="images/academicians.jpg" alt="The Academicians of the Royal Academy Painting by Johann Zoffany">
+                                <div class="text-wrapper">
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Johann Zoffany</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1771-72</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Royal Academy, London</dd></div>
+                                    </dl>
+
+                                    <p>Depiction of a life drawing class. Note how Angelica Kauffmann and Mary Moser are depicted as paintings on the wall rather than physically present (which was considered inappropriate and therefore not permitted).</p>
+                                    <p>Connection: Barring woman from attending life drawing classes (where <a href="#académie" class="card-link"> académies</a> were made) limited their ability to study anatomy and therefore their ability to become history painters.</p>
+                                    <a href="https://en.wikipedia.org/wiki/The_Academicians_of_the_Royal_Academy" target="_blank">(Source)</a>
+                                </div>
                             </div>
-
-                            <dl class="artwork-caption"> 
-                                <div class="caption-row"><dt>Artist:</dt> <dd>Johann Zoffany</dd></div>
-                                <div class="caption-row"><dt>Made:</dt>   <dd>1771-72</dd></div>
-                                <div class="caption-row"><dt>Place:</dt>  <dd>Royal Academy, London</dd></div>
-                            </dl>
-
-                            <p>Depiction of a life drawing class. Note how Angelica Kauffmann and Mary Moser are depicted as paintings on the wall rather than physically present.</p>
                         </details>
+                        
+                        <!--========ARTWORK CARD 2========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>The Death Of General Wolfe</summary>
+                            <div class="card-contents">
+                                <div class="image-wrapper">
+                                    <img src="images/TheDeathOfGeneralWolfe%20Medium.jpeg" alt="The Death of General Wolfe by Benjamin West">
+                                </div>
 
-                         <!--========TERM CARD 3========-->
-                        <details class="term-card"> 
+                                <div class="text-wrapper">
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Benjamin West</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1770</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>National Gallery of Canada</dd></div>
+                                    </dl>
+
+                                    <p><a href="#history-painting" class="card-link">History painting</a> that broke the rule of dressing figures in classical costumes.</p>
+                                    <a href="https://en.wikipedia.org/wiki/The_Death_of_General_Wolfe" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========ARTWORK CARD 3========-->
+                        <details class="artwork-card multi-image" name="card-group">
+                            <summary>Invention, Composition, Design, and Color</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/Invention%20Medium.jpeg" alt="Invention by Angelica Kauffmann">
+                                    <img src="images/Composition%20Medium.jpeg" alt="Composition by Angelica Kauffmann">
+                                    <img src="images/Design%20Medium.jpeg" alt="Design by Angelica Kauffmann">
+                                    <img src="images/Colouring%20Medium.jpeg" alt="Color by Angelica Kauffmann">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Angelica Kauffmann</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1778-80</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Royal Academy</dd></div>
+                                    </dl>
+
+                                    <p>Allegorical series of paintings called The Elements of Art. The ceiling series was painted for the Royal Academy's Council Room at Somerset House (after the proposed project for St. Paul's Cathedral was abandoned due to clerical opposition). </p>
+                                    <a href="https://en.wikipedia.org/wiki/Angelica_Kauffman#:~:text=In%201773%2C%20she,Academicians%20in%20General" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========ARTWORK CARD 4========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>Three Ladies Adorning a Term of Hymen</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/ThreeLadiesAdorningATermOfHymen%20Medium.jpeg" alt="Three Ladies Adorning a Term of Hymen by Sir Joshua Reynolds">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Sir Joshua Reynolds</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1773</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Tate</dd></div>
+                                    </dl>
+
+                                    <p><a href="#portraiture" class="card-link"> Grand manner portrait</a> that combines Neoclassical and Rococo elements. The act of adorning a statue of the Greek god of marriage ceremonies suggests the three daughters are suitable for marriage; morally and in their beauty.</p>
+                                    <a href="https://en.wikipedia.org/wiki/Three_Ladies_Adorning_a_Term_of_Hymen" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========ARTWORK CARD 5========-->
+                        <details class="artwork-card vertical-image" name="card-group" id="the-house-of-cards">
+                            <summary>The House of Cards</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/TheHouseOfCards.jpeg" alt="The House of Cards by Jean-Baptiste-Siméon Chardin">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Jean-Baptiste-Siméon Chardin</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>ca. 1750</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Uffizi, Florence</dd></div>
+                                    </dl>
+
+                                    <p>A <a href="#genre-painting" class="card-link">genre painting</a> depicting a young boy partaking in "psychological selfhood," quietly focused on his cards. Multifaceted implications, the coins serving as a subtle commentary on gambling, and the jack of hearts hinting at the risky game of romance. </p>
+                                    <a href="https://www.wga.hu/frames-e.html?/html/c/chardin/2/05h_card.html" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========ARTWORK CARD 6========-->
+                        <details class="artwork-card" name="card-group" id="embarkation-for-cythera">
+                            <summary>Embarkation for Cythera</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/EmbarkationForCythera%20Medium.jpeg" alt="Embarkation for Cythera by Antoine Watteau">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Antoine Watteau</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1717</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Louvre</dd></div>
+                                    </dl>
+
+                                    <p>Watteau's <a href="#reception-piece" class="card-link">reception piece</a> for the Académie Royale. They liked this Rococo piece so much that they bypassed it not fitting into traditional history painting categories by creating a new genre for it, the fête galante.</p>
+                                    <a href="https://en.wikipedia.org/wiki/The_Embarkation_for_Cythera" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 1 (WITH IMAGE)========-->
+                        <details class="term-card with-image" name="card-group" id="académie">
+                            <summary>Académie</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>"A sketch of the human body made after a live model; the basis of art education in the eighteenth century" - Study Guide</p>
+                                    <p>Context: A nude figure drawing or painting, typically made from a live model. It was a fundamental part of academic art training, which progressed from copying classical art, to drawing plaster casts, and finally to studying live models.</p>
+                                    <p>Connection: <em><a href="#the-academicians" class="card-link">The Academicians of the Royal Academy</a></em> portrays a scene where they would be making Académies</p>
+                                    <a href="https://en.wikipedia.org/wiki/Academic_art#:~:text=Drawings%20and%20paintings,live%20model%20posed." target="_blank">Source</a>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/AcademieExample.jpg" alt="Example of an Academie Drawing">
+                                </div>
+                            </div>
+                        </details>
+                        
+                            <!--========TERM CARD 2========-->
+                        <details class="term-card" name="card-group">
+                            <summary>Écorché</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>"A preserved, flayed body that reveals the underlying musculature of the human body; these were typically made from the bodies of executed criminals" -Study Guide </p>
+                                    <a href="https://en.wikipedia.org/wiki/Écorché" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 3========-->
+                        <details class="term-card no-image" name="card-group" id="reception-piece"> 
                             <summary>Reception Piece</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>"A work submitted by an artist to an academy for approval as part of the requirements for admission to membership" - Study Guide</p>
+                                    <p> Example: <em><a href="#embarkation-for-cythera" class="card-link">The Embarkation for Cythera</a></em></p>
+                                    <a href="https://en.wikipedia.org/wiki/Reception_piece" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 4========-->
+                        <details class="term-card parent-term" name="card-group">
+                            <summary>Hierarchy of Genres</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>"Established by the <span class="highlight-term">Académie royale</span>, which ranks genres according to their complexity and moral function" -Study Guide</p>
+                                    <p>Higher genres were valued for their intellectual depth rather than the mechanical imitation of physical objects.</p>
+                                    <a href="https://en.wikipedia.org/wiki/Hierarchy_of_genres" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 5========-->
+                        <details class="term-card sub-term" name="card-group" id="history-painting">
+                            <summary>History Painting</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>"the most complex and elevated genre, said to incorporate all the lower genres. Large-scale, usually based on narratives from classical history or from the Bible. Intended to provide moral instruction and articulate shared civic values. An attempt to highlight painting as a intellectual endeavor, rather than a manual craft form." -Study Guide</p>
+                                    <a href="https://en.wikipedia.org/wiki/History_painting" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 6========-->
+                        <details class="term-card sub-term" name="card-group" id="portraiture">
+                            <summary>Portraiture</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper">
+                                    <p>
+                                        <span class="sub-sub-term">Grand manner portraiture:</span><br>
+                                        "A subgenre of portraiture that attempts to elevate it by incorporating classical allusions." -Study Guide <br>
+                                        <a href="https://en.wikipedia.org/wiki/Grand_manner" target="_blank">(Source)</a>
+                                    </p>
+                                    
+                                    <p>
+                                        <span class="sub-sub-term">Conversation piece:</span><br>
+                                        "A subgenre of portraiture specific to the eighteenth century; it is a form of group portraiture that depicts a relatively informal group of family members or friends" -Study Guide <br>
+                                        <a href="https://en.wikipedia.org/wiki/Conversation_piece" target="_blank">(Source)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 7========-->
+                        <details class="term-card sub-term" name="card-group" id="genre-painting">
+                            <summary>Genre Painting</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p class="adjust-bottom-margin">
+                                        "Depicts scenes of everyday life; these scenes can have moral significance through symbolism (bubbles referring to the fleeting nature of life, etc.)" -Study Guide<br>
+                                        <a href="https://en.wikipedia.org/wiki/Genre_painting" target="_blank">(Source)</a>
+                                    </p>
+                                    <p>
+                                        <span class="sub-sub-term">Fête galante:</span><br>
+                                        "A subgenre specific to the eighteenth century; it depicts aristocratic figures in masquerade costumes relaxing and playing in lush natural settings. They are typically amorous in nature" -Study Guide
+                                    <br><br>Basically an elevated (or higher worth) version of genre painting. Somewhat ambiguous position in the hierarchy of genres.<br>
+                                        <a href="https://en.wikipedia.org/wiki/Fête_galante" target="_blank">(Source)</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 8========-->
+                        <details class="term-card sub-term" name="card-group">
+                            <summary>Landscape painting</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>The second lowest genre due to the absence of the human figure or a narrative. </p>
+                                    <a href="https://en.wikipedia.org/wiki/Landscape_painting" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!--========TERM CARD 9========-->
+                        <details class="term-card sub-term" name="card-group">
+                            <summary>Still Life</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>The lowest ranked genre, dismissed as a mechanical labor of copying an inanimate object by sight.</p>
+                                    <a href="https://en.wikipedia.org/wiki/Still_life" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    </div>
+                </section>
+                
+                <!--========SECTION OF CONTENT 2========-->
+                <section id="09-16">
+                    <h1> September 16th: The Grand Tour</h1>
 
-                            <p>"A work submitted by an artist to an academy for approval as part of the requirements for admission to membership" - Study Guide</p>
-                            <p> Example: The Embarkation for Cythera (see above)</p>
+                    <!--======== ACCORDIAN LIST OF CARDS========-->
+                    <div class="list-of-cards">
+                        
+                    <!--========ARTWORK CARD 1========-->
+                        <details class="artwork-card" name="card-group" id="piazza-san-marco">
+                            <summary>Piazza San Marco</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/PiazzaSanMarco.jpeg" alt="Piazza San Marco by Canaletto">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Canaletto</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>Late 1720s</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>The Metropolitan Museum of Art</dd></div>
+                                    </dl>
+
+                                    <a href=https://www.metmuseum.org/art/collection/search/435839 target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========ARTWORK CARD 2========-->
+                        <details class="artwork-card" name="card-group" id="exhibition-of-a-rhinoceros-at-venice">
+                            <summary>Exhibition of a Rhinoceros at Venice</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/ExhibitionOfARhinocerosatVenice.jpg" alt="Exhibition of a Rhinoceros at Venice by Pietro Longhi">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Pietro Longhi</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1751</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>National Gallery, London</dd></div>
+                                    </dl>
+
+                                    <a href="https://www.nationalgallery.org.uk/paintings/pietro-longhi-exhibition-of-a-rhinoceros-at-venice" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========ARTWORK CARD 3========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>Tribuna of the Uffizi</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/TribunaOfTheUffizi.jpeg" alt="Tribuna of the Uffizi by Johann Zoffanny">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Johann Zoffany</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1772-78</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Royal Collections Trust</dd></div>
+                                    </dl>
+                                    <p> Johann Zoffany did not get to work for the Royal Family again after making this painting.</p>
+                                    <a href="https://www.rct.uk/collection/406983/the-tribuna-of-the-uffizi" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========ARTWORK CARD 4========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>Vedute di Roma [Views of Rome]</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/VeduteDiRome.jpeg" alt="Vedute di Roma by Giovanni Battista Piranesi">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Giovanni Battista Piranesi</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1776</dd></div>
+                                    </dl>
+
+                                    <a href="https://www.metmuseum.org/art/collection/search/360270" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                    
+                    <!--========ARTWORK CARD 5========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>Ancient Rome and Modern Rome</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/AncientRomeAndModernRome.jpeg" alt="Ancient Rome and Modern Rome by Giovanni Pannini">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Giovanni Paolo Pannini</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>ca. 1757</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>The Metropolitan Museum of Art</dd></div>
+                                    </dl>
+
+                                    <a href="https://www.metmuseum.org/art/collection/search/437244" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>  
+                    
+                    <!--========ARTWORK CARD 6========-->
+                        <details class="artwork-card" name="card-group">
+                            <summary>Goethe in the Roman Campagna</summary>
+                            <div class="card-contents"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                <div class="image-wrapper">
+                                    <img src="images/GoetheInTheRomanCampagna.jpeg" alt="Goethe in the Romean Campagna by Johann Heinrich Wilhelm Tischbein">
+                                </div>
+
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <dl class="artwork-caption"> 
+                                        <div class="caption-row"><dt>Artist:</dt> <dd>Johann Heinrich Wilhelm Tischbein</dd></div>
+                                        <div class="caption-row"><dt>Made:</dt>   <dd>1787</dd></div>
+                                        <div class="caption-row"><dt>Place:</dt>  <dd>Städel Museum, Frankfurt</dd></div>
+                                    </dl>
+
+                                    <a href="https://sammlung.staedelmuseum.de/en/work/goethe-in-the-roman-campagna" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>   
+                        
+                    <!--========TERM CARD 1========-->
+                        <details class="term-card" name="card-group" id="the-grand-tour">
+                            <summary>The Grand Tour</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>"A tour of European cities that once was a standard feature of a classical education. Though the itinerary varied, it almost always included Paris, Venice, Florence, and Rome " -Study Guide</p>
+                                    <a href="https://en.wikipedia.org/wiki/Grand_Tour" target="_blank">(Source)</a>
+                                </div>
+                            </div>
                         </details>
 
+                    <!--========TERM CARD 2========-->
+                        <details class="term-card parent-term" name="card-group" id="carnival">
+                            <summary>Carnival of Venice</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>"Hugely popular pre-Lenten festival in the eighteenth century, famous for elaborate costumes and masks and for the opportunity for social license" -Study Guide</p>
+                                    <a href="https://en.wikipedia.org/wiki/Carnival_of_Venice" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                    
+                    <!--========TERM CARD 3========-->
+                        <details class="term-card sub-term" name="card-group">
+                            <summary>Bauta Mask</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>"Mask worn by men during Carnival; it would also be worn to ensure anonymity in political settings, Could accommodate talking, eating, and drinking." -Study Guide</p>
+                                    <a href="https://en.wikipedia.org/wiki/Carnival_of_Venice#:~:text=colour.[citation%20needed]-,examples%20of%20this%20from%20the%201750s." target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========TERM CARD 4========-->
+                        <details class="term-card sub-term" name="card-group">
+                            <summary>Moretta (Little Dark One) or Servetta Muta (Mute Maidservant) Mask</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>"Strapless facemask worn by women during Carnival; held to the face by biting a button on the interior of the mask" -Study Guide</p>
+                                    <a href="https://en.wikipedia.org/wiki/Carnival_of_Venice#:~:text=Moretta%20/%20servetta,disuse%20about%201760." target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========TERM CARD 5========-->
+                        <details class="term-card" name="card-group">
+                            <summary>Veduta</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>pl. Vedute, from the italian for "view"</p>
+                                    <p>"A painting or print depicting a cityscape or tourist site" -Study Guide</p>
+                                    <a href="https://example.com" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                        
+                    <!--========TERM CARD 6========-->
+                        <details class="term-card" name="card-group">
+                            <summary>Johann Joachim Winckelmann</summary>
+                            <div class="card-contents">
+                                <div class="text-wrapper"> <!--DONT USE FOR ANYTHING BUT FLEX BOX-->
+                                    <p>His major work <em>The History of Ancient Art</em>(first ed. 1764) was a catalyst for Neoclassicism.</p>
+                                    <a href="https://en.wikipedia.org/wiki/Johann_Joachim_Winckelmann#:~:text=(1764%2C%20%22The%20History%20of%20Ancient%20Art%22)%2C" target="_blank">(Source)</a>
+                                </div>
+                            </div>
+                        </details>
+                
                     </div>
                 </section>
             </main>
             
         </div>
+        <!--========EXTRA BELLS AND WHISTLES========-->
+        <!-- Lightbox Modal -->
+        <dialog id="image-lightbox" class="lightbox-modal">
+            <button class="lightbox-close" autofocus>&times;</button>
+            <img
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                alt="Enlarged artwork view"
+                id="lightbox-img" />
+        </dialog>
+
+        <!-- Java for lightbox and card scrolling and linking-->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const lightbox = document.getElementById("image-lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+                const closeBtn = document.querySelector(".lightbox-close");
+
+                // Select all artwork images for lightbox zoom
+                const images = document.querySelectorAll(".artwork-card img");
+
+                images.forEach((img) => {
+                    img.style.cursor = "zoom-in";
+                    img.addEventListener("click", () => {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        lightbox.showModal();
+                        document.documentElement.style.overflow = "hidden"; // Locks HTML scroll instead of Body to fix centering
+                    });
+                });
+
+                // Close when clicking the close button
+                closeBtn.addEventListener("click", () => lightbox.close());
+
+                // Close when clicking the background backdrop outside the image
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target === lightbox) lightbox.close();
+                });
+
+                // Automatically restore background scrolling whenever the dialog closes
+                // (handles close button, backdrop click, and the Escape key)
+                lightbox.addEventListener("close", () => {
+                    document.documentElement.style.overflow = "";
+                });
+
+                // Instant-response scroll using native CSS alignment
+                document.querySelectorAll(".artwork-card, .term-card").forEach((card) => {
+                    card.addEventListener("toggle", () => {
+                        if (card.open) {
+                            card.scrollIntoView({ block: "nearest" });
+                        }
+                    });
+                });
+            });
+
+            // Automatically open cards whenever any internal anchor link is clicked
+            document.addEventListener("click", (e) => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+
+                const targetId = link.getAttribute("href");
+                const targetCard = document.querySelector(targetId);
+
+                if (targetCard && targetCard.tagName === "DETAILS") {
+                    targetCard.open = true;
+                    targetCard.scrollIntoView({ block: "nearest" });
+                }
+            });
+        </script>
+        
+        
         
     </body>
 </html>
